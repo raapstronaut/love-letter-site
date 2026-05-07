@@ -2,19 +2,23 @@
   "name": "my-love-site",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://raapstronaut.github.io/love-letter-site",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
-    "next": "16.2.4",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "next": "...",
+    "react": "...",
+    "react-dom": "..."
   },
   "devDependencies": {
-    "eslint": "^9",
-    "eslint-config-next": "16.2.4"
+    "eslint": "...",
+    "eslint-config-next": "...",
+    "gh-pages": "..."
   }
 }
