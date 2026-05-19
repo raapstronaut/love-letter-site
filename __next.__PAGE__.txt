@@ -1,10 +1,10 @@
 1:"$Sreact.fragment"
-2:I[82406,["/love-letter-site/_next/static/chunks/0dbhjjzl8qfwv.js","/love-letter-site/_next/static/chunks/0e_s7gf07s19x.js"],"default"]
-3:I[79427,["/love-letter-site/_next/static/chunks/0dbhjjzl8qfwv.js","/love-letter-site/_next/static/chunks/0e_s7gf07s19x.js"],"default"]
-4:I[47638,["/love-letter-site/_next/static/chunks/0dbhjjzl8qfwv.js","/love-letter-site/_next/static/chunks/0e_s7gf07s19x.js"],"default"]
-5:I[7745,["/love-letter-site/_next/static/chunks/0dbhjjzl8qfwv.js","/love-letter-site/_next/static/chunks/0e_s7gf07s19x.js"],"default"]
-6:I[37807,["/love-letter-site/_next/static/chunks/0dbhjjzl8qfwv.js","/love-letter-site/_next/static/chunks/0e_s7gf07s19x.js"],"default"]
+2:I[82406,["/love-letter-site/_next/static/chunks/0dbhjjzl8qfwv.js","/love-letter-site/_next/static/chunks/0jxv3g9r0myth.js"],"default"]
+3:I[79427,["/love-letter-site/_next/static/chunks/0dbhjjzl8qfwv.js","/love-letter-site/_next/static/chunks/0jxv3g9r0myth.js"],"default"]
+4:I[47638,["/love-letter-site/_next/static/chunks/0dbhjjzl8qfwv.js","/love-letter-site/_next/static/chunks/0jxv3g9r0myth.js"],"default"]
+5:I[7745,["/love-letter-site/_next/static/chunks/0dbhjjzl8qfwv.js","/love-letter-site/_next/static/chunks/0jxv3g9r0myth.js"],"default"]
+6:I[37807,["/love-letter-site/_next/static/chunks/0dbhjjzl8qfwv.js","/love-letter-site/_next/static/chunks/0jxv3g9r0myth.js"],"default"]
 7:I[97367,["/love-letter-site/_next/static/chunks/0dbhjjzl8qfwv.js"],"OutletBoundary"]
 8:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],["$","header",null,{"className":"navbar","children":["$","nav",null,{"className":"nav-links","children":[["$","a",null,{"href":"#home","children":"Home"}],["$","a",null,{"href":"#about","children":"About Us"}],["$","a",null,{"href":"#timeline","children":"Cerita Kita"}],["$","a",null,{"href":"#gallery","children":"Gallery"}]]}]}],["$","$L3",null,{}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","footer",null,{"children":"made with ❤️ for us"}]],[["$","script","script-0",{"src":"/love-letter-site/_next/static/chunks/0e_s7gf07s19x.js","async":true}]],["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zeCRUhoHZSTJ9lB7XxIcs"}
+0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],["$","header",null,{"className":"navbar","children":["$","nav",null,{"className":"nav-links","children":[["$","a",null,{"href":"#home","children":"Home"}],["$","a",null,{"href":"#about","children":"About Us"}],["$","a",null,{"href":"#timeline","children":"Cerita Kita"}],["$","a",null,{"href":"#gallery","children":"Gallery"}]]}]}],["$","$L3",null,{}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","footer",null,{"children":"made with ❤️ for us"}]],[["$","script","script-0",{"src":"/love-letter-site/_next/static/chunks/0jxv3g9r0myth.js","async":true}]],["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"BW-Pn7h9JToyuV2YdpPHQ"}
 9:null
