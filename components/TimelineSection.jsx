@@ -177,7 +177,10 @@ export default function TimelineSection() {
   const featuredStories = stories.filter((story) => story.featured);
   const otherStories = stories.filter((story) => !story.featured);
 
-  const getImagePath = (image) => `${basePath}${image}`;
+  const getImagePath = (image) => {
+  if (!image) return "";
+  return `${basePath}${image.startsWith("/") ? image : `/${image}`}`;
+};
 
   return (
     <section id="timeline" className="story-book-section">
