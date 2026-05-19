@@ -14,7 +14,7 @@ export default function TimelineSection() {
       title: "First Date",
       date: "10 Agustus 2024",
       location: "Bukit Pemancar",
-      image: "public/images/firstdate.JPG",
+      image: "/images/firstdate.JPG",
       featured: true,
       summary:
         "Momen kita pertama kali jalan berdua, yang awalnya awkward banget, tapi justru jadi kenangan yang nggak bisa dilupain.",
