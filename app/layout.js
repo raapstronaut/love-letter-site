@@ -1,8 +1,11 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Untuk Kamu",
+  title: "mutyaaa",
   description: "Website kecil untuk kita",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -40,7 +40,7 @@ export default function HeroSection() {
           kenangan, dan hal-hal sederhana yang telah kita lalui.
         </p>
 
-        <a href="#timeline" className="hero-btn">Lihat Cerita Kita</a>
+        <a href="#about" className="hero-btn">Scroll Down</a>
       </div>
     </section>
   );

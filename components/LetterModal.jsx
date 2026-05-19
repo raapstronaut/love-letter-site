@@ -1,10 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function LetterModal() {
   const [opened, setOpened] = useState(false);
   const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    if (!hidden) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [hidden]);
 
   if (hidden) return null;
 

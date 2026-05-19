@@ -8,63 +8,66 @@ export default function AboutSection() {
   const [currentSong, setCurrentSong] = useState("");
   const [playingSong, setPlayingSong] = useState("");
 
+  const basePath =
+    process.env.NODE_ENV === "production" ? "/love-letter-site" : "";
+
   const songs = [
     {
       title: "everything u are",
       artist: "Hindia",
-      file: "/music/song1.mp3",
-      image: "/images/song1.jpg",
+      file: `${basePath}/music/song1.mp3`,
     },
     {
       title: "Message In A Bottle",
       artist: "Taylor Swift",
-      file: "/music/song2.mp3",
-      image: "/images/song2.jpg",
+      file: `${basePath}/music/song2.mp3`,
     },
     {
       title: "About You",
       artist: "The 1975",
-      file: "/music/song3.mp3",
-      image: "/images/song3.jpg",
+      file: `${basePath}/music/song3.mp3`,
     },
   ];
 
-  const handleToggleSong = (song) => {
+  const handleToggleSong = async (song) => {
     const audio = audioRef.current;
     if (!audio) return;
 
     const isSameSong = currentSong === song.file;
     const isPlayingThisSong = playingSong === song.file;
 
-    if (isSameSong && isPlayingThisSong) {
-      audio.pause();
-      setPlayingSong("");
-      return;
-    }
-
-    if (isSameSong && !isPlayingThisSong) {
-      audio.play().catch(() => {});
-      setPlayingSong(song.file);
-      return;
-    }
-
-    setCurrentSong(song.file);
-    setPlayingSong(song.file);
-
-    setTimeout(() => {
-      if (audioRef.current) {
-        audioRef.current.load();
-        audioRef.current.play().catch(() => {});
+    try {
+      if (isSameSong && isPlayingThisSong) {
+        audio.pause();
+        setPlayingSong("");
+        return;
       }
-    }, 0);
+
+      if (!isSameSong) {
+        audio.pause();
+        audio.src = song.file;
+        audio.load();
+        setCurrentSong(song.file);
+      }
+
+      await audio.play();
+      setPlayingSong(song.file);
+    } catch (error) {
+      console.error("Audio error:", error);
+    }
   };
 
   return (
     <section id="about">
       <RevealOnScroll delay={0}>
         <div className="section-title">
-          <h2><span className="gradient-text">About Us</span></h2>
-          <p>sedikit tentang kita dan beberapa hal yang selalu bikin semuanya terasa spesial.</p>
+          <h2>
+            <span className="gradient-text">About Us</span>
+          </h2>
+          <p>
+            sedikit tentang kita dan beberapa hal yang selalu bikin semuanya
+            terasa spesial.
+          </p>
         </div>
       </RevealOnScroll>
 
@@ -72,14 +75,14 @@ export default function AboutSection() {
         <RevealOnScroll delay={0}>
           <div className="about-card">
             <div className="about-image">
-              <img src="/images/foto2.jpg" alt="Foto kita 1" />
+              <img src={`${basePath}/images/foto2.jpg`} alt="Foto kita 1" />
             </div>
+
             <div className="about-text">
-              <h3>Our Little Story</h3>
+              <h3>Dari Hal Sederhana</h3>
               <p>
-                nanti bagian ini bisa kamu isi dengan cerita singkat tentang kalian.
-                misalnya gimana awal semuanya berjalan, hal kecil yang paling kamu suka,
-                atau kenapa hubungan ini punya tempat yang spesial.
+                Kita memulai dari hal yang sederhana, cuma satu kelompok tugas,
+                yang perlahan berubah menjadi cerita yang punya banyak makna.
               </p>
             </div>
           </div>
@@ -88,14 +91,15 @@ export default function AboutSection() {
         <RevealOnScroll delay={120}>
           <div className="about-card">
             <div className="about-image">
-              <img src="/images/foto3.jpg" alt="Foto kita 2" />
+              <img src={`${basePath}/images/foto3.jpeg`} alt="Foto kita 2" />
             </div>
+
             <div className="about-text">
-              <h3>Why It Matters</h3>
+              <h3>Yang Kita Punya</h3>
               <p>
-                bagian ini bisa kamu isi dengan hal yang lebih personal.
-                bisa tentang rasa syukur, momen yang paling berkesan,
-                atau alasan kenapa semua perjalanan ini berarti buat kamu.
+                Hubungan kita engga selalu manis dan kalem, tapi di balik jahil,
+                usil, dan saling ngeledek, ada rasa sayang dan peduli yang bikin
+                kita terasa aman.
               </p>
             </div>
           </div>
@@ -103,43 +107,48 @@ export default function AboutSection() {
       </div>
 
       <RevealOnScroll delay={180}>
-        <div className="music-section">
-          <div className="music-title">
-            <h3>Lagu Kita 🎵</h3>
-            <p>beberapa lagu kecil yang punya cerita sendiri.</p>
+        <div className="music-section mini-music-section">
+          <div className="music-title mini-music-title">
+            <h3>Lagu Buat Kita 🎵</h3>
+            <p>beberapa lagu kecil buat nemenin halaman ini.</p>
           </div>
 
-          <div className="music-cards music-cards-pretty">
-            {songs.map((song, index) => {
+          <div className="mini-music-row">
+            {songs.map((song) => {
               const isActive = playingSong === song.file;
 
               return (
-                <RevealOnScroll delay={index * 100} key={index}>
-                  <div className={`music-card music-card-pretty ${isActive ? "music-card-active" : ""}`}>
-                    <div className="music-cover">
-                      <img src={song.image} alt={song.title} />
-                    </div>
-
-                    <div className="music-info music-info-pretty">
-                      <h4>{song.title}</h4>
-                      <p>{song.artist}</p>
-                    </div>
-
-                    <button
-                      className="music-btn"
-                      onClick={() => handleToggleSong(song)}
-                    >
-                      {isActive ? "❚❚ Pause" : "▶ Play"}
-                    </button>
+                <div
+                  key={song.file}
+                  className={`mini-music-card ${
+                    isActive ? "mini-music-card-active" : ""
+                  }`}
+                >
+                  <div className="mini-music-info">
+                    <h4>{song.title}</h4>
+                    <p>{song.artist}</p>
                   </div>
-                </RevealOnScroll>
+
+                  <button
+                    type="button"
+                    className="mini-music-btn"
+                    onClick={() => handleToggleSong(song)}
+                  >
+                    {isActive ? "❚❚ Pause" : "▶ Play"}
+                  </button>
+                </div>
               );
             })}
           </div>
 
-          <audio ref={audioRef} loop style={{ display: "none" }}>
-            {currentSong && <source src={currentSong} type="audio/mpeg" />}
-          </audio>
+          <audio
+            ref={audioRef}
+            loop
+            preload="auto"
+            style={{ display: "none" }}
+            onEnded={() => setPlayingSong("")}
+            onPause={() => setPlayingSong("")}
+          />
         </div>
       </RevealOnScroll>
     </section>
