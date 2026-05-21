@@ -5,6 +5,7 @@ import RevealOnScroll from "@/components/RevealOnScroll";
 
 export default function TimelineSection() {
   const [selectedStory, setSelectedStory] = useState(null);
+  const [currentOtherIndex, setCurrentOtherIndex] = useState(0);
 
   const basePath =
     process.env.NODE_ENV === "production" ? "/love-letter-site" : "";
@@ -87,8 +88,7 @@ export default function TimelineSection() {
       date: "04 Juni 2025",
       location: "Pantai Rio",
       image: "/images/pantai.jpeg",
-      summary:
-        "Ke Rio by The Beach after mas presentasi tubes.",
+      summary: "Ke Rio by The Beach after mas presentasi tubes.",
       detail:
         "Kita ke Rio by The Beach abis mas presentasi tubes, walaupun kita kena skem sama radit. Di pantai, waktu sore kita sempat tiduran di kursi kayu, ngobrol, istirahat, lalu main air pas mau magrib. Harinya capek tapi seru. Yang paling ngeselin, pas pulang adek malah tidur (emang kebo sih) di jalan dan nggak nemenin mas. Tapi tetap aja, momen itu jadi salah satu hari yang punya suasana sendiri.",
     },
@@ -137,8 +137,7 @@ export default function TimelineSection() {
       date: "08 Maret 2026",
       location: "Metro",
       image: "/images/bukber.jpeg",
-      summary:
-        "Bukber bareng di Metro sambil keliling naik Astrea.",
+      summary: "Bukber bareng di Metro sambil keliling naik Astrea.",
       detail:
         "Waktu bulan puasa, adek ada tugas StuKot yang kebetulan banget di Metro. Mas nyusul adek abis buka puasa, walaupun awalnya adek sempet gamau karena naik astrea. tapi abis itu kita keliling sambil makan daging Grill. untung masakan mas lebih enak daripada masakan adek, hihihi. Abis makan, kita jalan-jalan lagi, terus pulangnya mampir beli roti di Momoyo. Sederhana, tapi lengkap: ada jalan-jalannya, ada makannya, ada dramanya, dan ada kita.",
     },
@@ -146,14 +145,13 @@ export default function TimelineSection() {
       title: "Photobooth",
       date: "07 Mei 2026",
       location: "Momenku",
-      image: "/images/photobooth.jpeg",
-      summary:
-        "Photobooth pake jahim masing-masing prodi",
+      image: "/images/photoboth.jpeg",
+      summary: "Photobooth pake jahim masing-masing prodi",
       detail:
         "Setelah dua tahun punya jahim, baru kemarin kita foto bareng pake jahim masing-masing. Kita berangkat sebelum magrib ke photobooth Momenku. mana hasil fotonya kureng lagi, tapi justru itu yang bikin lucu kalo diingat lagi. Abis photobooth, kita beli risol, terus makan es krim. Baru setelah itu kita lanjut nonton film AIN di TM. Harinya ngalir aja, tapi isinya banyak hal kecil yang bikin momen itu tetap berasa.",
     },
     {
-      title: "Ulang Tahun Mas ",
+      title: "Ulang Tahun Mas",
       date: "14 Mei 2026",
       location: "Zozo Garden",
       image: "/images/ultah mas2.jpeg",
@@ -166,7 +164,7 @@ export default function TimelineSection() {
       title: "To Be Continued",
       date: "Masih berlanjut",
       location: "Cerita kita",
-      image: "/images/story16.jpg",
+      image: "/images/foto2.jpg",
       summary:
         "Masih ada cerita yang belum kebuka, mungkin karena semestanya belum siap… atau kitanya aja yang belum ada foto bagus.",
       detail:
@@ -176,11 +174,24 @@ export default function TimelineSection() {
 
   const featuredStories = stories.filter((story) => story.featured);
   const otherStories = stories.filter((story) => !story.featured);
+  const currentOtherStory = otherStories[currentOtherIndex];
 
   const getImagePath = (image) => {
-  if (!image) return "";
-  return `${basePath}${image.startsWith("/") ? image : `/${image}`}`;
-};
+    if (!image) return "";
+    return `${basePath}${image.startsWith("/") ? image : `/${image}`}`;
+  };
+
+  const goToPreviousOtherStory = () => {
+    setCurrentOtherIndex((prevIndex) =>
+      prevIndex === 0 ? otherStories.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNextOtherStory = () => {
+    setCurrentOtherIndex((prevIndex) =>
+      prevIndex === otherStories.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
   return (
     <section id="timeline" className="story-book-section">
@@ -199,7 +210,10 @@ export default function TimelineSection() {
       <div className="story-book-wrapper">
         <div className="featured-story-grid">
           {featuredStories.map((story, index) => (
-            <RevealOnScroll delay={index * 120} key={story.title}>
+            <RevealOnScroll
+              delay={index * 120}
+              key={`${story.title}-${story.date}`}
+            >
               <article className="featured-story-card">
                 <div className="featured-story-image">
                   <img src={getImagePath(story.image)} alt={story.title} />
@@ -228,23 +242,65 @@ export default function TimelineSection() {
         </div>
 
         <RevealOnScroll delay={160}>
+          <div className="other-stories-title">
+            <h3>Kenangan Lainnya</h3>
+            <p>
+              mulai dari ngelukis di McD sampai cerita-cerita kecil lain yang
+              tetap punya tempat sendiri.
+            </p>
+          </div>
         </RevealOnScroll>
 
-        <div className="other-stories-grid">
-          {otherStories.map((story, index) => (
-            <RevealOnScroll delay={(index % 4) * 80} key={story.title}>
+        {currentOtherStory && (
+          <RevealOnScroll delay={220}>
+            <div className="other-story-slider-wrapper">
               <button
                 type="button"
-                className="other-story-card"
-                onClick={() => setSelectedStory(story)}
+                className="other-story-nav other-story-nav-left"
+                onClick={goToPreviousOtherStory}
+                aria-label="Cerita sebelumnya"
               >
-                <h4>{story.title}</h4>
-                <p>{story.summary}</p>
-                <span>Lihat cerita →</span>
+                ‹
               </button>
-            </RevealOnScroll>
-          ))}
-        </div>
+
+              <button
+                type="button"
+                className="other-story-slide-card"
+                onClick={() => setSelectedStory(currentOtherStory)}
+              >
+                <div className="other-story-slide-image">
+                  <img
+                    src={getImagePath(currentOtherStory.image)}
+                    alt={currentOtherStory.title}
+                  />
+                </div>
+
+                <div className="other-story-slide-content">
+                  <h4>{currentOtherStory.title}</h4>
+                  <p>{currentOtherStory.summary}</p>
+
+                  <div className="story-meta">
+                    <div className="meta-item">📅 {currentOtherStory.date}</div>
+                    <div className="meta-item">
+                      📍 {currentOtherStory.location}
+                    </div>
+                  </div>
+
+                  <span className="other-story-slide-link">Baca cerita →</span>
+                </div>
+              </button>
+
+              <button
+                type="button"
+                className="other-story-nav other-story-nav-right"
+                onClick={goToNextOtherStory}
+                aria-label="Cerita selanjutnya"
+              >
+                ›
+              </button>
+            </div>
+          </RevealOnScroll>
+        )}
       </div>
 
       {selectedStory && (
