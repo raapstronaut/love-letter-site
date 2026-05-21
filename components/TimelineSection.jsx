@@ -36,7 +36,7 @@ export default function TimelineSection() {
       title: "Ngelukis di McD",
       date: "12 Agustus 2024",
       location: "Mekdi Kedaton",
-      image: "/images/lukis.jpg",
+      image: "/images/lukis.JPG",
       summary:
         "Keluar malam-malam ke Mekdi buat ngelukis gantungan kunci, terus bikin video tiktok bareng.",
       detail:
@@ -56,7 +56,7 @@ export default function TimelineSection() {
       title: "Main ke Metro",
       date: "16 September 2024",
       location: "Metro",
-      image: "/images/metro.jpg",
+      image: "/images/metro.JPG",
       summary:
         "Main ke Metro, beli somay langganan, nonton di BES Cinema, pulangnya makan Seafood Tumpah.",
       detail:
@@ -146,7 +146,7 @@ export default function TimelineSection() {
       title: "Photobooth",
       date: "07 Mei 2026",
       location: "Momenku",
-      image: "/images/photoboth.jpeg",
+      image: "/images/photobooth.jpeg",
       summary:
         "Photobooth pake jahim masing-masing prodi",
       detail:
