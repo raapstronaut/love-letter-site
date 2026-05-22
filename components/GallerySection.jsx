@@ -15,7 +15,7 @@ export default function GallerySection() {
     "/images/galeri3.jpg",
     "/images/galeri4.jpg",
     "/images/galeri5.jpg",
-    "/images/galeri6.jpg",
+    "/images/galeri6.JPG",
     "/images/galeri7.jpg",
     "/images/galeri8.jpg",
     "/images/galeri9.jpg",
