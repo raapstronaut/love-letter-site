@@ -1,2 +1,2 @@
 :HL["/love-letter-site/_next/static/chunks/0ll42m-fdllus.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"6Y1ZlHGG-a_eQpVlgFpDr"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"M_v7mR8cNZF9r7zbEHiXD"}
