@@ -51,7 +51,7 @@ export default function TimelineSection() {
       summary:
         "Bukan cuma soal gelangnya, tapi tentang waktu yang kita habiskan buat bikin sesuatu bareng.",
       detail:
-        "Tulis cerita lengkap tentang gelang couple kalian di sini.",
+        "Kita ke Momoyo Legundi buat bikin gelang dari manik-manik yang adek beli. Mas bikin tulisan “Mutyaa”, adek bikin “R”, awalnya semuanya masih lucu-lucu aja. Sampe tiba-tiba dari dimensi sebelah ada yang gebrak meja, bikin kaget bjirr terus mana suasananya langsung hening sama awkward lagi. Ini sebenernya momen manis bikin gelang couple, tapi malah ada gebrakan random yang tiba-tiba. Justru karena itu, momennya jadi makin susah dilupain.",
     },
     {
       title: "Main ke Metro",
@@ -120,7 +120,7 @@ export default function TimelineSection() {
       summary:
         "Awalnya mas gamau karena kek buat anak kecil, tapi ternyata jadi salah satu momen paling seru.",
       detail:
-        "Kita ke Milkyverse yang ada di Ciplaz. Awalnya mas gamau karena tempatnya kek buat bocil, ya emang iyasi. Tapi begitu kita masuk, malah jadi seru banget. Kita main parkour, trampolin, panahan, sampai ke kolam busa. Capeknya brutal, sampe mas mau jackpot karena kebanyakan lompat-lompat, tapi justru itu yang bikin momennya berkesan. Setelah itu kita bikin video Tiktok, mas agak malu, tapi jujur ini salah satu momen paling seru yang pernah kita punya.",
+        "Kita ke Milkyverse yang ada di Ciplaz. Awalnya mas gamau karena tempatnya kek buat bocil, ya emang iyasi. Tapi begitu kita masuk, malah jadi seru banget. Kita main parkour, trampolin, panahan, sampe ke kolam busa. Capeknya brutal, sampe mas mau jackpot karena kebanyakan lompat-lompat, tapi justru itu yang bikin momennya berkesan. Setelah itu kita bikin video Tiktok, mas agak malu, tapi jujur ini salah satu momen paling seru yang pernah kita punya.",
     },
     {
       title: "Otw KKN",
@@ -145,7 +145,7 @@ export default function TimelineSection() {
       title: "Photobooth",
       date: "07 Mei 2026",
       location: "Momenku",
-      image: "/images/photoboth.jpeg",
+      image: "/images/photobooth.jpeg",
       summary: "Photobooth pake jahim masing-masing prodi",
       detail:
         "Setelah dua tahun punya jahim, baru kemarin kita foto bareng pake jahim masing-masing. Kita berangkat sebelum magrib ke photobooth Momenku. mana hasil fotonya kureng lagi, tapi justru itu yang bikin lucu kalo diingat lagi. Abis photobooth, kita beli risol, terus makan es krim. Baru setelah itu kita lanjut nonton film AIN di TM. Harinya ngalir aja, tapi isinya banyak hal kecil yang bikin momen itu tetap berasa.",
@@ -168,7 +168,7 @@ export default function TimelineSection() {
       summary:
         "Masih ada cerita yang belum kebuka, mungkin karena semestanya belum siap… atau kitanya aja yang belum ada foto bagus.",
       detail:
-        "Bagian ini sengaja belum ditulis sampai selesai. Bukan karena ceritanya kosong, tapi karena masih ada momen yang belum datang, belum ketebak, atau mungkin belum sempat difoto dengan angle yang bener. Jadi untuk sekarang, biarin halaman ini jadi ruang kecil yang nyimpen tanda tanya. Siapa tahu nanti isinya jadi momen yang paling random, paling lucu, atau malah paling susah dilupain.",
+        "Bagian ini sengaja belum ditulis sampe selesai. Bukan karena ceritanya kosong, tapi karena masih ada momen yang belum datang, belum ketebak, atau mungkin belum sempat difoto dengan angle yang bener. Jadi untuk sekarang, biarin halaman ini jadi ruang kecil yang nyimpen tanda tanya. Siapa tahu nanti isinya jadi momen yang paling random, paling lucu, atau malah paling susah dilupain.",
     },
   ];
 
@@ -202,7 +202,7 @@ export default function TimelineSection() {
           </h2>
           <p>
             beberapa momen yang selalu punya tempat spesial, dari yang sederhana
-            sampai yang susah dilupain.
+            sampe yang susah dilupain.
           </p>
         </div>
       </RevealOnScroll>
@@ -243,11 +243,6 @@ export default function TimelineSection() {
 
         <RevealOnScroll delay={160}>
           <div className="other-stories-title">
-            <h3>Kenangan Lainnya</h3>
-            <p>
-              mulai dari ngelukis di McD sampai cerita-cerita kecil lain yang
-              tetap punya tempat sendiri.
-            </p>
           </div>
         </RevealOnScroll>
 

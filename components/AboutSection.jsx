@@ -13,13 +13,13 @@ export default function AboutSection() {
 
   const songs = [
     {
-      title: "everything u are",
-      artist: "Hindia",
+      title: "Enchanted",
+      artist: "Taylor Swift",
       file: `${basePath}/music/song1.mp3`,
     },
     {
-      title: "Message In A Bottle",
-      artist: "Taylor Swift",
+      title: "Sempurna",
+      artist: "Andra and The Backbone",
       file: `${basePath}/music/song2.mp3`,
     },
     {
@@ -109,7 +109,7 @@ export default function AboutSection() {
       <RevealOnScroll delay={180}>
         <div className="music-section mini-music-section">
           <div className="music-title mini-music-title">
-            <h3>Lagu Buat Kita 🎵</h3>
+            <h3>Play Song 🎵</h3>
             <p>beberapa lagu kecil buat nemenin halaman ini.</p>
           </div>
 
