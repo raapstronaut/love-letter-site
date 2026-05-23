@@ -164,7 +164,7 @@ export default function TimelineSection() {
       title: "To Be Continued",
       date: "Masih berlanjut",
       location: "Cerita kita",
-      image: "/images/foto2.jpg",
+      image: "/images/tbc.jpeg",
       summary:
         "Masih ada cerita yang belum kebuka, mungkin karena semestanya belum siap… atau kitanya aja yang belum ada foto bagus.",
       detail:
